@@ -1,5 +1,6 @@
 #pragma once
 #include "..\GameSettings.h"
+#include <pgmspace.h>
 
 #define CORE
 
@@ -9,7 +10,7 @@
 #define TEX_GHZ_TILES 	1
 #define TEX_GHZ_GIMM 	2
 
-#include <M5Stack.h>
+//#include <M5Stack.h>
 #include <list>
 
 #ifdef OPTIMAL_RESOLUTION

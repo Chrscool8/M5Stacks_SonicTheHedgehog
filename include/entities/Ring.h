@@ -5,7 +5,7 @@
 class Ring : public Entity
 {
     public:
-        enum Dir {DIR_RIGHT, DIR_LEFT, DIR_DOWN, DIR_UP}; 
+        //enum Dir {DIR_RIGHT, DIR_LEFT, DIR_DOWN, DIR_UP}; 
         Ring(Vector2f _pos) : Entity(_pos) {}
         Ring(Vector2f _pos, Terrain& _trn, float _xsp, float _ysp) : Entity(_pos) 
         {

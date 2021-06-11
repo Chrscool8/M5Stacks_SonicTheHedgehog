@@ -1,6 +1,8 @@
 #pragma once
 // === Settings file, there you can configurate the game === //
 
+#include <M5Core2.h>
+
 /* === Resolution === */
 #define OPTIMAL_RESOLUTION    // Optimal resolution - 160 x 140, 27-30 fps, High Perfomance
 //#define FULL_RESOLUTION     // Full resolution    - 320 x 200; 8-10 fps,  Low Perfomance

@@ -8,7 +8,7 @@
   All characters and graphics are copyright of SEGA.
 
   You can configure the game in a file "GameSettings.h"
-  
+
   --- Controls ---
   Left   button - left
   Right  button - right
@@ -23,6 +23,8 @@
   Author: GalaxyShad, 2020
   GitHub: https://github.com/GalaxyShad
 */
+
+#include <M5Core2.h>
 
 // ========================== //
 #include "gameLogo.h"
@@ -40,36 +42,36 @@ int fps = 0;
 float frameFrame = 0;
 
 void setup() {
-	M5.begin();
+	M5.begin(true, true, true, true);
 	M5.Lcd.fillScreen(TFT_BLACK);
-  M5.Lcd.pushImage(49, 196, 223, 39, (uint16_t*)imgGameLogo);
-  scr.create(Size(SCREEN_WIDTH, SCREEN_HEIGHT));
+	M5.Lcd.pushImage(49, 196, 223, 39, (uint16_t*)imgGameLogo);
+	scr.create(Size(SCREEN_WIDTH, SCREEN_HEIGHT));
 }
 
 void loop() {
-  lv = Level();
-  lv.create();
-  while(lv.isLevelPlaying()) {
-    startFrame = millis();
-    lv.update();
-    if (1.0 / frameFrame <= 36)
-      lv.update();
-    scr.beginDraw();
-    lv.draw();
-    scr.endDraw();
+	lv = Level();
+	lv.create();
+	while (lv.isLevelPlaying()) {
+		startFrame = millis();
+		lv.update();
+		if (1.0 / frameFrame <= 36)
+			lv.update();
+		scr.beginDraw();
+		lv.draw();
+		scr.endDraw();
 
-    
-    M5.Lcd.fillRect(8, 14, 72, 48, TFT_DARKGREY);
-    frameFrame = (millis() - startFrame) / 1000.0;
-    fps = 1.0 / frameFrame;
-    M5.Lcd.setTextColor(TFT_WHITE);
-    M5.Lcd.drawString("Fps", 12, 20, 2);
-    M5.Lcd.drawString("Rings", 12, 40, 2);
-    M5.Lcd.drawNumber(fps, 54, 20, 2);
-    M5.Lcd.drawNumber((long int)(*lv.rings), 54, 40, 2);
-    
-    M5.update();
-  }
-  
+
+		M5.Lcd.fillRect(8, 14, 72, 48, TFT_DARKGREY);
+		frameFrame = (millis() - startFrame) / 1000.0;
+		fps = 1.0 / frameFrame;
+		M5.Lcd.setTextColor(TFT_WHITE);
+		M5.Lcd.drawString("Fps", 12, 20, 2);
+		M5.Lcd.drawString("Rings", 12, 40, 2);
+		M5.Lcd.drawNumber(fps, 54, 20, 2);
+		M5.Lcd.drawNumber((long int)(*lv.rings), 54, 40, 2);
+
+		M5.update();
+	}
+
 }
 

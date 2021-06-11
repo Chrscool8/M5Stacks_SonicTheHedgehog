@@ -1,5 +1,6 @@
 #include "include\Level.h"
 
+
 void Level::create() {
 
 	#pragma region Create objects
@@ -67,9 +68,9 @@ void Level::create() {
 		entities.push_back(new Spring(Vector2f(0x0F80, 0x03BF)));
 	#pragma endregion
 	#pragma region Rings
-		entities.push_back(new Ring(Vector2f(0x0144, 0x0360), 3, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x0334, 0x022C), 6, Ring::DIR_DOWN, entities));
-		entities.push_back(new Ring(Vector2f(0x046C, 0x0320), 5, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x0144, 0x0360), 3, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x0334, 0x022C), 6, 270, entities));
+		entities.push_back(new Ring(Vector2f(0x046C, 0x0320), 5, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x0680, 0x0387)));
 		entities.push_back(new Ring(Vector2f(0x06A0, 0x0397)));
 		entities.push_back(new Ring(Vector2f(0x06C0, 0x03A5)));
@@ -77,8 +78,8 @@ void Level::create() {
 		entities.push_back(new Ring(Vector2f(0x070B, 0x03B3)));
 		entities.push_back(new Ring(Vector2f(0x0737, 0x03AF)));
 		entities.push_back(new Ring(Vector2f(0x075B, 0x0392)));
-		entities.push_back(new Ring(Vector2f(0x09C4, 0x02C0), 2, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x0B94, 0x02D0), 2, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x09C4, 0x02C0), 2, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x0B94, 0x02D0), 2, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x0D50, 0x02B6)));
 		entities.push_back(new Ring(Vector2f(0x0D70, 0x02A9)));
 		entities.push_back(new Ring(Vector2f(0x0D92, 0x0297)));
@@ -90,9 +91,9 @@ void Level::create() {
 		entities.push_back(new Ring(Vector2f(0x0F1A, 0x0205)));
 		entities.push_back(new Ring(Vector2f(0x0F3F, 0x0209)));
 		entities.push_back(new Ring(Vector2f(0x0F66, 0x0208)));
-		entities.push_back(new Ring(Vector2f(0x0F88, 0x02D8), 3, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x1158, 0x032C), 3, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x1220, 0x032C), 3, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x0F88, 0x02D8), 3, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x1158, 0x032C), 3, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x1220, 0x032C), 3, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x125C, 0x023E)));
 		entities.push_back(new Ring(Vector2f(0x1280, 0x0249)));
 		entities.push_back(new Ring(Vector2f(0x12A2, 0x0259)));
@@ -111,28 +112,28 @@ void Level::create() {
 		entities.push_back(new Ring(Vector2f(0x17A6, 0x0179)));
 		entities.push_back(new Ring(Vector2f(0x17E0, 0x0174)));
 		entities.push_back(new Ring(Vector2f(0x180C, 0x0174)));
-		entities.push_back(new Ring(Vector2f(0x1820, 0x0074), 7, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x1820, 0x0074), 7, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x183C, 0x0176)));
 		entities.push_back(new Ring(Vector2f(0x186C, 0x0178)));
 		entities.push_back(new Ring(Vector2f(0x189C, 0x017A)));
-		entities.push_back(new Ring(Vector2f(0x18C8, 0x0074), 7, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x18C8, 0x0074), 7, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x18CC, 0x0174)));
 		entities.push_back(new Ring(Vector2f(0x18FC, 0x0174)));
 		entities.push_back(new Ring(Vector2f(0x192C, 0x0175)));
-		entities.push_back(new Ring(Vector2f(0x1950, 0x0370), 5, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x1950, 0x0370), 5, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x195C, 0x017A)));
-		entities.push_back(new Ring(Vector2f(0x1970, 0x0074), 6, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x1970, 0x0074), 6, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x198C, 0x017B)));
 		entities.push_back(new Ring(Vector2f(0x19BC, 0x0176)));
 		entities.push_back(new Ring(Vector2f(0x19EC, 0x0174)));
-		entities.push_back(new Ring(Vector2f(0x1D58, 0x0268), 7, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x1D64, 0x0258), 7, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x1D70, 0x0248), 6, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x1D7C, 0x0238), 5, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x1D88, 0x0228), 4, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x1D58, 0x0268), 7, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x1D64, 0x0258), 7, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x1D70, 0x0248), 6, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x1D7C, 0x0238), 5, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x1D88, 0x0228), 4, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x1E00, 0x0268)));
-		entities.push_back(new Ring(Vector2f(0x1F64, 0x0480), 6, Ring::DIR_RIGHT, entities));
-		entities.push_back(new Ring(Vector2f(0x1F70, 0x02B4), 5, Ring::DIR_RIGHT, entities));
+		entities.push_back(new Ring(Vector2f(0x1F64, 0x0480), 6, 0, entities));
+		entities.push_back(new Ring(Vector2f(0x1F70, 0x02B4), 5, 0, entities));
 		entities.push_back(new Ring(Vector2f(0x2135, 0x0374)));
 		entities.push_back(new Ring(Vector2f(0x2158, 0x037D)));
 		entities.push_back(new Ring(Vector2f(0x217A, 0x0388)));
